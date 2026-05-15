@@ -41,32 +41,7 @@ const CONFIG = {
   HEO_INFO_CARD_URL3: '',
   HEO_INFO_CARD_TEXT3: '',
 
-  HEO_GROUP_ICONS: [
-    {
-      title_1: 'PHP',
-      img_1: '',
-      color_1: '#777bb3',
-      title_2: 'Laravel',
-      img_2: '',
-      color_2: '#ff2d20'
-    },
-    {
-      title_1: 'Go',
-      img_1: '',
-      color_1: '#00add8',
-      title_2: 'Filament',
-      img_2: '',
-      color_2: '#f59e0b'
-    },
-    {
-      title_1: 'MySQL',
-      img_1: '',
-      color_1: '#4479a1',
-      title_2: 'Git',
-      img_2: '',
-      color_2: '#df5b40'
-    }
-  ],
+  HEO_GROUP_ICONS: [],
 
   HEO_SOCIAL_CARD: false,
 
