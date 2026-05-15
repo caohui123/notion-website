@@ -2,7 +2,6 @@ import BLOG from '@/blog.config'
 import useNotification from '@/components/Notification'
 import TechGrow from '@/components/TechGrow'
 import { siteConfig } from '@/lib/config'
-import { isExport } from '@/lib/utils/buildMode'
 import { resolvePostProps } from '@/lib/db/SiteDataApi'
 import { useGlobal } from '@/lib/global'
 import { getPageTableOfContents } from '@/lib/db/notion/getPageTableOfContents'
@@ -135,7 +134,7 @@ export async function getStaticProps({ params: { prefix }, locale }) {
 
   return {
     props,
-    revalidate: isExport()
+    revalidate: process.env.EXPORT === 'true' ? false : 60
       ? undefined
       : siteConfig(
         'NEXT_REVALIDATE_SECOND',

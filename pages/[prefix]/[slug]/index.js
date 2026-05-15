@@ -1,7 +1,7 @@
 import BLOG from '@/blog.config'
 import { siteConfig } from '@/lib/config'
 import { resolvePostProps } from '@/lib/db/SiteDataApi'
-import { isExport } from '@/lib/utils/buildMode'
+
 import Slug from '..'
 import { checkSlugHasOneSlash } from '@/lib/utils/post'
 import { getStaticPathsBase } from '@/lib/build/staticPaths'
@@ -38,7 +38,7 @@ export async function getStaticProps({ params: { prefix, slug }, locale }) {
 
   return {
     props,
-    revalidate: isExport()
+    revalidate: process.env.EXPORT === 'true' ? false : 60
       ? undefined
       : siteConfig(
         'NEXT_REVALIDATE_SECOND',
